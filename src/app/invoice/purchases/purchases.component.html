@@ -1,0 +1,25 @@
+<po-page-list p-title="Dados do Cliente">
+  <po-list-view
+    [p-hide-select-all]="hide"
+    [p-select]="hide"
+    p-property-link="url"
+    p-property-title="name"
+    [p-items]="purchasesLocal"
+  >
+    <ng-template p-list-view-content-template let-purchase [p-title]="formatTitle">
+      <div class="po-row">
+        <po-info class="po-lg-4" p-label="Valor" [p-value]="purchase.ValorFat"></po-info>
+
+        <po-info class="po-lg-4" p-label="Status" p-value="Pago"></po-info>
+
+        <po-info class="po-lg-4" p-label="Serie" [p-value]="purchase.Serie"></po-info>
+      </div>
+    </ng-template>
+
+    <ng-template p-list-view-detail-template let-purchase [p-show-detail]="showDetail">
+      <div class="po-row">
+        <po-info class="po-md-6" p-label="Emissao" [p-value]="purchase.Emissao"></po-info>
+      </div>
+    </ng-template>
+  </po-list-view>
+</po-page-list>

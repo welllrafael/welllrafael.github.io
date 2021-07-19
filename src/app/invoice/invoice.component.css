@@ -1,0 +1,10 @@
+.thf-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.center {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+}

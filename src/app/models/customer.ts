@@ -1,0 +1,30 @@
+export interface Customer {
+  // code: string;
+  // store: string;
+  // name: string;
+  // address: string;
+  // district: string;
+  // postalCode: string;
+  // cgc: string;
+  // phone: string;
+  // State: string;
+  // email: string;
+  // limit: string;
+  // usedLimit: string;
+  // lastShop: string;
+  // codeId: string;
+  ENDERECO: string;
+  LOJA: string;
+  CEP: string;
+  TELEFONE: string;
+  LIMITE: string;
+  BAIRRO: string;
+  ESTADO: string;
+  ULTCOMPRA: string;
+  LIMITEUSADO: string;
+  CGC: string;
+  NOME: string;
+  EMAIL: string;
+  INICIAL: string;
+  CODIGO: string;
+}

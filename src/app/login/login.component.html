@@ -1,0 +1,32 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <po-widget
+        class="po-lg-6 po-mt-2"
+        p-background="../../../assets/images/381_SELO.png"
+        [p-height]="height"
+        [p-primary]="primary"
+        (p-click)="redirectTo()"
+        >
+        <!-- <div class="po-font-subtitle po-text-center">17 days left</div> -->
+      </po-widget>
+      <form [formGroup]="reactiveForm">
+        <div class="po-row">
+          <div>
+            <po-input class="po-md-12" formControlName="login" p-clean p-icon="po-icon-user" p-placeholder="CPF" p-mask="999.999.999-99"> </po-input>
+          </div>
+        </div>
+
+        <div class="po-row">
+          <div style="margin-left: 2%;">
+            <po-datepicker formControlName="brithday" p-placeholder="Data de Nascimento" > </po-datepicker>
+          </div>
+        </div>
+
+        <div class="po-row">
+            <po-button class="po-md-3" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

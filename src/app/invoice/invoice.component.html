@@ -1,0 +1,48 @@
+<div class="center">
+  <po-container>
+    <div class="po-font-title po-mb-3">Mega Modas</div>
+    <div class="po-row">
+      <div class="po-md-6">
+        <po-gauge
+          p-title="Limite de Compra do Cliente"
+          [p-value]="limiteUsado"
+          [p-description]="description"
+          [p-ranges]="limitRanges"
+        ></po-gauge>
+      </div>
+    </div>
+    <div class="po-row">
+      <po-divider
+          p-label="Informacoes de Compra" >
+      </po-divider>
+    </div>
+    <div class="po-row">
+      <div class="po-md-6">
+        <po-button
+          class="po-md-4"
+          p-icon="po-icon po-icon-notification"
+          p-label="Vencimento"
+          (p-click)="getBonds()"
+          [p-disabled]="disableAction"
+        ></po-button>
+        <po-button
+          class="po-md-4"
+          p-icon="po-icon po-icon-credit-payment"
+          p-label="Ultima Compra"
+          (p-click)="getPurchases()"
+          [p-disabled]="disableAction"
+        ></po-button>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <div class="thf-margin">
+        <div class="po-md-6" *ngIf="showBonds">
+          <app-bonds [bonds]="bondsLoaded"></app-bonds>
+        </div>
+        <div class="po-md-6" *ngIf="showPurchases">
+          <app-purchases [purchases]="purchasesLoaded"></app-purchases>
+        </div>
+      </div>
+    </div>
+  </po-container>
+</div>
