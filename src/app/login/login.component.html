@@ -1,32 +1,22 @@
-<div class="outer">
-  <div class="middle">
-    <div class="inner">
-      <po-widget
-        class="po-lg-6 po-mt-2"
-        p-background="../../../assets/images/381_SELO.png"
-        [p-height]="height"
-        [p-primary]="primary"
-        (p-click)="redirectTo()"
-        >
-        <!-- <div class="po-font-subtitle po-text-center">17 days left</div> -->
-      </po-widget>
-      <form [formGroup]="reactiveForm">
+<po-container class="login">
+  <div class="login">
+    <po-widget
+    class="po-lg-12 po-mt-2"
+    [p-height]="height"
+    p-background="../../../assets/images/381_SELO.png"
+    [p-primary]="primary"
+    >
+    </po-widget>
+    <form [formGroup]="reactiveForm">
+      <div >
         <div class="po-row">
-          <div>
-            <po-input class="po-md-12" formControlName="login" p-clean p-icon="po-icon-user" p-placeholder="CPF" p-mask="999.999.999-99"> </po-input>
-          </div>
+          <po-input class="po-sm-12" [(ngModel)]="login" formControlName="login" p-clean p-icon="po-icon-user" p-placeholder="CPF" p-mask="999.999.999-99"> </po-input>
         </div>
-
         <div class="po-row">
-          <div style="margin-left: 2%;">
-            <po-datepicker formControlName="brithday" p-placeholder="Data de Nascimento" > </po-datepicker>
-          </div>
+          <po-datepicker class="po-sm-12" [(ngModel)]="birthday" formControlName="birthday" p-placeholder="Data de Nascimento" > </po-datepicker>
         </div>
-
-        <div class="po-row">
-            <po-button class="po-md-3" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
-        </div>
-      </form>
-    </div>
+        <po-button class="po-sm-12" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
+      </div>
+    </form>
   </div>
-</div>
+</po-container>

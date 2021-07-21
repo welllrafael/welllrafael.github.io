@@ -11,10 +11,10 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
-  login(cpf: string, dateBirthday: string):
+  login(cpf: string, dateBirthday: string | null):
     Observable<Customer> {
     return this.httpClient
-      .get<Customer>(`${this.loginUrl}&cDtnasc=${dateBirthday}&cCgc=${cpf}`)
+      .get<Customer>(`${this.loginUrl}&cDtnasc=${dateBirthday}&cCgc=${cpf}`);
   }
 
 }
