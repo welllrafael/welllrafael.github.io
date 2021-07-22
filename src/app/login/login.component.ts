@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   reactiveForm!: FormGroup;
   link: string = 'https://www.google.com.br/search?q=megamodas+mega+modas';
   primary: boolean = true;
-  height: number = 410;
+  height: number = 210;
   login: string = "";
   birthday!: Date;
 
@@ -61,7 +61,6 @@ export class LoginComponent implements OnInit {
       },
       error => {
           console.log(error);
-          this.poNotification.error('deu ruim');
           this.poNotification.error(`Error ao fazer login ${error.message}`);
       })
   }

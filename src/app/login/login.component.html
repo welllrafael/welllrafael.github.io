@@ -1,35 +1,36 @@
-<!-- <po-container class="login">
-  <div class="login">
-    <po-widget
-    class="po-lg-12 po-mt-2"
-    [p-height]="height"
-    p-background="../../../assets/images/381_SELO.png"
-    [p-primary]="primary"
-    >
-    </po-widget>
-    <form [formGroup]="reactiveForm">
-      <div >
-        <div class="po-row">
-          <po-input class="po-sm-12" [(ngModel)]="login" formControlName="login" p-clean p-icon="po-icon-user" p-placeholder="CPF" p-mask="999.999.999-99"> </po-input>
-        </div>
-        <div class="po-row">
-          <po-datepicker class="po-sm-12" [(ngModel)]="birthday" formControlName="birthday" p-placeholder="Data de Nascimento" > </po-datepicker>
-        </div>
-        <po-button class="po-sm-12" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
-      </div>
-    </form>
-  </div>
-</po-container> -->
+<div class="po-row">
+  <po-widget
+  class="po-lg-2 po-mt-2"
+  [p-height]="height"
+  p-background="../../../assets/images/381_SELO.png"
+  [p-primary]="primary"
+  >
+  </po-widget>
 
-<div class="po-wrapper">
-  <div class="login">
-    <po-widget
-    class="po-lg-6 po-mt-2"
-    [p-height]="height"
-    p-background="../../../assets/images/381_SELO.png"
-    [p-primary]="primary"
-    >
-    </po-widget>
+</div>
+<div>
+  <form [formGroup]="reactiveForm">
+    <div class="po-row">
+      <po-input class="po-sm-2" [(ngModel)]="login" formControlName="login" p-clean p-icon="po-icon-user" p-placeholder="CPF" p-mask="999.999.999-99"> </po-input>
+    </div>
+    <div class="po-row">
+      <po-datepicker class="po-sm-2" [(ngModel)]="birthday" formControlName="birthday" p-placeholder="Data de Nascimento" > </po-datepicker>
+    </div>
+      <po-button class="po-sm-2" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
+
+  </form>
+</div>
+
+
+<!-- <div class="login">
+  <po-widget
+  class="po-lg-6 po-mt-2"
+  [p-height]="height"
+  p-background="../../../assets/images/381_SELO.png"
+  [p-primary]="primary"
+  >
+  </po-widget>
+  <div >
     <form [formGroup]="reactiveForm">
       <div >
         <div class="po-row">
@@ -42,5 +43,4 @@
       </div>
     </form>
   </div>
-</div>
-
+</div> -->
