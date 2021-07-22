@@ -1,5 +1,4 @@
-<div class="center">
-  <po-container class="po-lg-12">
+<div class="po-wrapper">
     <div class="po-font-title po-mb-3">Mega Modas</div>
     <div class="po-row">
       <div class="po-md-3">
@@ -34,15 +33,8 @@
         ></po-button>
       </div>
     </div>
-    <div class="table-responsive">
-      <div class="thf-margin">
-        <div class="po-md-6" *ngIf="showBonds">
-          <app-bonds [bonds]="bondsLoaded"></app-bonds>
-        </div>
-        <div class="po-md-6" *ngIf="showPurchases">
-          <app-purchases [purchases]="purchasesLoaded"></app-purchases>
-        </div>
-      </div>
-    </div>
-  </po-container>
 </div>
+<po-container class="po-md-4">
+  <app-bonds *ngIf="showBonds" [bonds]="bondsLoaded"></app-bonds>
+  <app-purchases *ngIf="showPurchases" [purchases]="purchasesLoaded"></app-purchases>
+</po-container>
