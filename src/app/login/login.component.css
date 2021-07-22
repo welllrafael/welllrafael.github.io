@@ -8,15 +8,7 @@
 .login
  {
   margin-top: 5%;
-  padding-left:  25%;
-  padding-right: 25%;
+  padding-left:  30%;
   display: block;
-  position: relative;
- }
-
- .login2
- {
-  width: 70%;
-  height: 70%;
-  position: relative;
+  position: inherit;
  }
