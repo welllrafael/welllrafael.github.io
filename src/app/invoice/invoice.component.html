@@ -1,8 +1,10 @@
 <div class="po-wrapper">
-    <div class="po-font-title po-mb-2">Mega Modas</div>
+    <div class="po-font-title po-mb-2">Mega Modas
+    </div>
     <div class="po-row">
-      <div class="po-md-3">
+      <div class="po-md-4">
         <po-gauge
+          class="po-sm-12"
           p-title="Limite de Compra do Cliente"
           [p-value]="limiteUsado"
           [p-description]="description"
@@ -26,6 +28,14 @@
           (p-click)="getPurchases()"
           [p-disabled]="disableAction"
         ></po-button>
+        <div >
+          <po-button
+            class="po-md-2"
+            p-icon="po-icon po-icon-exit"
+            p-label="Sair"
+            (p-click)="exit()"
+          ></po-button>
+        </div>
       </div>
     </div>
 </div>

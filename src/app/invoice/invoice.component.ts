@@ -80,6 +80,11 @@ export class InvoiceComponent implements OnInit {
     this.showPurchases = true;
   }
 
+  exit()
+  {
+    this.router.navigateByUrl('');
+  }
+
 
   private loadPurchase() {
     this.customerService.getPurchases(this.customer?.LOJA, this.customer?.CODIGO)
