@@ -15,6 +15,7 @@ export class InvoiceComponent implements OnInit {
   limiteUsado: number = 0;
   limiteTotal: number = 0;
   limiteDisponivel: number = 0;
+  welcomeCustomer: string = "";
   description: string = "";
   limitRanges: Array<PoGaugeRanges> = [];
   bondsLoad: bonds | undefined;
@@ -36,15 +37,17 @@ export class InvoiceComponent implements OnInit {
 
     if(this.customer !== undefined)
     {
+      this.welcomeCustomer = `OLÁ, ${this.customer.NOME}`
+
       this.limiteUsado = +this.customer.LIMITEUSADO;
       this.limiteTotal = +this.customer.LIMITE;
 
-      this.limiteDisponivel = (this.limiteTotal - this.limiteDisponivel);
-      this.description = `${this.limiteDisponivel.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Limite Disponivel`
+      this.limiteDisponivel = (this.limiteTotal - this.limiteUsado);
+      this.description = `${this.limiteDisponivel.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Limite Total`
 
       this.limitRanges = [
-        { from: 0, to: this.limiteUsado, label: `${this.limiteUsado.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) } Usado`, color: '#c64840' },
-        { from: this.limiteUsado, to: this.limiteTotal, label: `${this.limiteTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Total`, color: '#00b28e' }
+        { from: 0, to: this.limiteUsado, label: `${this.limiteUsado.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) } Utilizado`, color: '#c64840' },
+        { from: this.limiteUsado, to: this.limiteTotal, label: `${this.limiteTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Disponível`, color: '#00b28e' }
       ];
     }
     else

@@ -1,11 +1,18 @@
 <div class="po-wrapper">
-    <div class="po-font-title po-mb-2">Mega Modas
-    </div>
+    <div class="po-font-title po-mb-2">MegaModas</div>
+    <div class="po-sm-12">
+      <po-button
+       class="po-md-4"
+       p-icon="po-icon po-icon-exit"
+       p-label="Sair"
+       (p-click)="exit()"
+     ></po-button> 
+   </div>
     <div class="po-row">
       <div class="po-md-4">
         <po-gauge
           class="po-sm-12"
-          p-title="Limite de Compra do Cliente"
+          [p-title]="welcomeCustomer"
           [p-value]="limiteUsado"
           [p-description]="description"
           [p-ranges]="limitRanges"
@@ -21,25 +28,25 @@
           (p-click)="getBonds()"
           [p-disabled]="disableAction"
         ></po-button>
-        <po-button
+<!--         <po-button
           class="po-md-4"
           p-icon="po-icon po-icon-credit-payment"
           p-label="Ultima Compra"
           (p-click)="getPurchases()"
           [p-disabled]="disableAction"
-        ></po-button>
+        ></po-button> 
         <div >
-          <po-button
+           <po-button
             class="po-md-2"
             p-icon="po-icon po-icon-exit"
             p-label="Sair"
             (p-click)="exit()"
-          ></po-button>
-        </div>
+          ></po-button> 
+        </div> -->
       </div>
     </div>
 </div>
 <po-container class="po-md-4">
   <app-bonds *ngIf="showBonds" [bonds]="bondsLoaded"></app-bonds>
-  <app-purchases *ngIf="showPurchases" [purchases]="purchasesLoaded"></app-purchases>
+  <!-- <app-purchases *ngIf="showPurchases" [purchases]="purchasesLoaded"></app-purchases> -->
 </po-container>

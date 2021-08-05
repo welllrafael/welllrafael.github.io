@@ -31,7 +31,7 @@ export class BondsComponent implements OnInit {
       icon: 'po-icon po-icon-pix-logo'
     },
     {
-      label: 'Outros',
+      label: 'WhatsApp',
       action: ()=>{},
       disabled: true,
       type: 'danger',
