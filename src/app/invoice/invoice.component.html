@@ -1,4 +1,5 @@
-<div class="po-wrapper">
+<div class="po-hidden-sm po-md-12 po-lg-12 po-xl-12">
+  <div >
     <div class="po-font-title po-mb-2">MegaModas</div>
     <div class="po-sm-12">
       <po-button
@@ -39,8 +40,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="po-row">
+    <app-bonds class="po-md-4" *ngIf="!disableAction" [bonds]="bondsLoaded" [customer]="customer"></app-bonds>
+    <app-purchases class="po-md-4" *ngIf="customerAlign" [purchases]="purchasesLoaded"></app-purchases>
+  </div>
 </div>
-<po-container class="po-md-4">
-  <app-bonds *ngIf="!disableAction" [bonds]="bondsLoaded" [customer]="customer"></app-bonds>
-  <app-purchases *ngIf="customerAlign" [purchases]="purchasesLoaded"></app-purchases>
-</po-container>
