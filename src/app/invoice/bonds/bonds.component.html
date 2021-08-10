@@ -11,7 +11,7 @@
       <div class="po-row">
         <po-info class="po-lg-4" p-label="Valor" [p-value]="bond.Valor"></po-info>
 
-        <po-info class="po-lg-4" p-label="Status" p-value="Nao Pago"></po-info>
+        <po-info class="po-lg-4" p-label="Status" (p-value)="statusBond"></po-info>
 
         <po-info class="po-lg-4" p-label="Prefixo" [p-value]="bond.Prefixo"></po-info>
       </div>

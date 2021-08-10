@@ -1,12 +1,10 @@
 import { bond } from './../../models/bonds';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {
   PoListViewAction,
-  PoNotificationService,
-  PoPageAction,
-  PoPageFilter
-} from '@po-ui/ng-components';
+  PoNotificationService} from '@po-ui/ng-components';
+import { Customer } from 'src/app/models/customer';
 
 @Component({
   selector: 'app-bonds',
@@ -16,12 +14,14 @@ import {
 export class BondsComponent implements OnInit {
 
   purchasesLocal: Array<bond> = [];
+  customerLocal: Customer | undefined;
 
   labelFilter: string = '';
   hide: boolean = false;
   selectedActionItem = {};
   titleDetailsModal: string = 'User Detail';
   @Input() bonds: Array<bond> | undefined;
+  @Input() customer: Customer | undefined;
 
   readonly actions: Array<PoListViewAction> = [
     {
@@ -32,8 +32,8 @@ export class BondsComponent implements OnInit {
     },
     {
       label: 'WhatsApp',
-      action: ()=>{},
-      disabled: true,
+      action: this.sendToWhatsApp.bind(this),
+      disabled: false,
       type: 'danger',
       icon: 'po-icon po-icon-plus-circle'
     }
@@ -46,6 +46,9 @@ export class BondsComponent implements OnInit {
   ngOnInit() {
     if (this.bonds !== undefined)
         this.purchasesLocal = this.bonds
+     
+    if (this.customer !== undefined)
+        this.customerLocal = this.customer    
   }
 
   formatTitle(item: any) {
@@ -58,6 +61,15 @@ export class BondsComponent implements OnInit {
 
   paymentByPix(){
 
+  }
+
+  sendToWhatsApp(pItem: any){
+
+    let cpf: any = this.customerLocal?.CGC.replace(/[^\d]/g, "");
+
+    cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+
+    window.open(`http://api.whatsapp.com/send?1=pt_BR&phone=5565992575958&text=Gostaria%20de%20falar%20sobre%20o%20CPF:%20${cpf}%20título:%20${pItem.Numero}`,'_blank');
   }
 
 }
