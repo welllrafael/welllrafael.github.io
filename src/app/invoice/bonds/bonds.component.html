@@ -10,10 +10,8 @@
     <ng-template p-list-view-content-template let-bond [p-title]="formatTitle">
       <div class="po-row">
         <po-info class="po-lg-4" p-label="Valor" [p-value]="bond.Valor"></po-info>
-
-        <po-info class="po-lg-4" p-label="Status" (p-value)="statusBond"></po-info>
-
         <po-info class="po-lg-4" p-label="Prefixo" [p-value]="bond.Prefixo"></po-info>
+        <po-tag [p-value]="bond.status" [p-color]="bond.poColor"> </po-tag>
       </div>
     </ng-template>
 

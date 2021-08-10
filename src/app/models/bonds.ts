@@ -17,6 +17,8 @@ export interface bond {
   ItemCtb?: string;
   Filial?: string;
   Emissao?: string;
+  status?: string;
+  poColor?: string;
 }
 
 export interface bonds {

@@ -24,6 +24,7 @@ export class InvoiceComponent implements OnInit {
   showBonds: boolean = false;
   showPurchases: boolean = false;
   disableAction: boolean = true;
+  customerAlign: boolean = false;
 
   bondsLoaded: Array<bond> | undefined = [];
   purchasesLoaded: Array<purchase> | undefined = [];
@@ -68,12 +69,23 @@ export class InvoiceComponent implements OnInit {
   }
 
   private loadBonds() {
+    let venctoBond: string;
     this.customerService.getBonds(this.customer?.LOJA, this.customer?.CODIGO)
       .subscribe(bonds => {
-        console.log('bond');
-        console.log(bonds);
+        console.log(bonds,'bond');
         this.bondsLoad = bonds;
         this.bondsLoaded = this.bondsLoad?.TitulosAreceber
+        this.bondsLoaded?.map(bonds=>
+          {
+            venctoBond = bonds.Vencimento
+            ? new Date(bonds.Vencimento).toLocaleDateString("pt-BR")
+            : new Date(Date.now()).toLocaleDateString("pt-BR");
+
+            bonds.Vencimento = venctoBond;
+            bonds.status = (venctoBond > new Date(Date.now()).toLocaleDateString("pt-BR") ? "Em Aberto" : "Atrasado");
+            bonds.poColor = (venctoBond > new Date(Date.now()).toLocaleDateString("pt-BR") ? "color-08" : "color-07");
+          })
+        this.disableAction = false;
       });
   }
 
@@ -96,7 +108,7 @@ export class InvoiceComponent implements OnInit {
         console.log(purchases);
         this.purchasesLoad = purchases;
         this.purchasesLoaded = purchases.Vendas;
-        this.disableAction = false;
+        //this.disableAction = false;
       });
   }
 }

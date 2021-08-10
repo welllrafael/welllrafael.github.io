@@ -6,7 +6,7 @@
        p-icon="po-icon po-icon-exit"
        p-label="Sair"
        (p-click)="exit()"
-     ></po-button> 
+     ></po-button>
    </div>
     <div class="po-row">
       <div class="po-md-4">
@@ -28,25 +28,19 @@
           (p-click)="getBonds()"
           [p-disabled]="disableAction"
         ></po-button>
-<!--         <po-button
+        <div *ngIf="customerAlign">
+          <po-button
           class="po-md-4"
           p-icon="po-icon po-icon-credit-payment"
           p-label="Ultima Compra"
           (p-click)="getPurchases()"
           [p-disabled]="disableAction"
-        ></po-button> 
-        <div >
-           <po-button
-            class="po-md-2"
-            p-icon="po-icon po-icon-exit"
-            p-label="Sair"
-            (p-click)="exit()"
-          ></po-button> 
-        </div> -->
+        ></po-button>
+        </div>
       </div>
     </div>
 </div>
 <po-container class="po-md-4">
-  <app-bonds *ngIf="showBonds" [bonds]="bondsLoaded" [customer]="customer"></app-bonds>
-  <!-- <app-purchases *ngIf="showPurchases" [purchases]="purchasesLoaded"></app-purchases> -->
+  <app-bonds *ngIf="!disableAction" [bonds]="bondsLoaded" [customer]="customer"></app-bonds>
+  <app-purchases *ngIf="customerAlign" [purchases]="purchasesLoaded"></app-purchases>
 </po-container>
