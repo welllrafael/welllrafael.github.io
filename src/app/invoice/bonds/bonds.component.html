@@ -8,18 +8,18 @@
     [p-items]="purchasesLocal"
   >
     <ng-template p-list-view-content-template let-bond [p-title]="formatTitle">
-      <div class="po-row">
-        <po-info class="po-lg-4" p-label="Valor" [p-value]="bond.Valor"></po-info>
-        <po-info class="po-lg-4" p-label="Prefixo" [p-value]="bond.Prefixo"></po-info>
+      <div >
+        <po-info  p-label="Valor" [p-value]="bond.Valor"></po-info>
+        <po-info  p-label="Prefixo" [p-value]="bond.Prefixo"></po-info>
         <po-tag [p-value]="bond.status" [p-color]="bond.poColor"> </po-tag>
       </div>
     </ng-template>
 
     <ng-template p-list-view-detail-template let-bond [p-show-detail]="showDetail">
-      <div class="po-row">
-        <po-info class="po-md-6" p-label="Vencimento" [p-value]="bond.Vencimento"></po-info>
+      <div >
+        <po-info  p-label="Vencimento" [p-value]="bond.Vencimento"></po-info>
 
-        <po-info class="po-md-6" p-label="Parcela" [p-value]="bond.Parcela"></po-info>
+        <po-info  p-label="Parcela" [p-value]="bond.Parcela"></po-info>
       </div>
     </ng-template>
   </po-list-view>
