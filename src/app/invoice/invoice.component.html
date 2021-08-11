@@ -4,16 +4,15 @@
     <div class="po-font-title po-mb-2">MegaModas</div>
     <div class="po-sm-12">
       <po-button
-       class="po-md-4"
        p-icon="po-icon po-icon-exit"
        p-label="Sair"
        (p-click)="exit()"
      ></po-button>
    </div>
-    <div class="po-row">
-      <div class="po-md-4">
+    <div >
+      <div >
         <po-gauge
-          class="po-sm-12"
+
           [p-title]="welcomeCustomer"
           [p-value]="limiteUsado"
           [p-description]="description"
@@ -21,10 +20,9 @@
         ></po-gauge>
       </div>
     </div>
-    <div style="margin-top: 1%;">
-      <div class="po-xl-6 po-lg-6 po-md-6 po-sm-6">
+    <div >
         <po-button
-          class="po-md-4"
+
           p-icon="po-icon po-icon-notification"
           p-label="Vencimento"
           (p-click)="getBonds()"
@@ -32,19 +30,18 @@
         ></po-button>
         <div *ngIf="customerAlign">
           <po-button
-          class="po-md-4"
+
           p-icon="po-icon po-icon-credit-payment"
           p-label="Ultima Compra"
           (p-click)="getPurchases()"
           [p-disabled]="disableAction"
         ></po-button>
         </div>
-      </div>
+
     </div>
-  </div>
-  <div class="po-row">
-    <app-bonds class="po-md-4" *ngIf="!disableAction" [bonds]="bondsLoaded" [customer]="customer"></app-bonds>
-    <app-purchases class="po-md-4" *ngIf="customerAlign" [purchases]="purchasesLoaded"></app-purchases>
+  <div>
+    <app-bonds  *ngIf="!disableAction" [bonds]="bondsLoaded" [customer]="customer"></app-bonds>
+    <app-purchases  *ngIf="customerAlign" [purchases]="purchasesLoaded"></app-purchases>
   </div>
 </div>
 </html>
