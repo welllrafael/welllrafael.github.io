@@ -44,11 +44,11 @@ export class InvoiceComponent implements OnInit {
       this.limiteTotal = +this.customer.LIMITE;
 
       this.limiteDisponivel = (this.limiteTotal - this.limiteUsado);
-      this.description = `${this.limiteDisponivel.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Limite Total`
+      this.description = `${this.limiteTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Limite Total`
 
       this.limitRanges = [
         { from: 0, to: this.limiteUsado, label: `${this.limiteUsado.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) } Utilizado`, color: '#c64840' },
-        { from: this.limiteUsado, to: this.limiteTotal, label: `${this.limiteTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Disponível`, color: '#00b28e' }
+        { from: this.limiteUsado, to: this.limiteTotal, label: `${this.limiteDisponivel.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Disponível`, color: '#00b28e' }
       ];
     }
     else
