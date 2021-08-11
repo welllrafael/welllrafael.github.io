@@ -70,6 +70,7 @@ export class InvoiceComponent implements OnInit {
 
   private loadBonds() {
     let venctoBond: string;
+    let dateConvert: Date;
     this.customerService.getBonds(this.customer?.LOJA, this.customer?.CODIGO)
       .subscribe(bonds => {
         console.log(bonds,'bond');
@@ -81,9 +82,13 @@ export class InvoiceComponent implements OnInit {
             ? new Date(bonds.Vencimento).toLocaleDateString("pt-BR")
             : new Date(Date.now()).toLocaleDateString("pt-BR");
 
+            console.log(venctoBond);
+            console.log(new Date(Date.now()).toLocaleDateString("pt-BR"));
+
+            dateConvert = this.stringToDate(venctoBond);
             bonds.Vencimento = venctoBond;
-            bonds.status = (venctoBond > new Date(Date.now()).toLocaleDateString("pt-BR") ? "Em Aberto" : "Atrasado");
-            bonds.poColor = (venctoBond > new Date(Date.now()).toLocaleDateString("pt-BR") ? "color-08" : "color-07");
+            bonds.status = (dateConvert > new Date(Date.now()) ? "A Vencer" : "Atrasado");
+            bonds.poColor = (dateConvert > new Date(Date.now()) ? "color-08" : "color-07");
           })
         this.disableAction = false;
       });
@@ -100,6 +105,12 @@ export class InvoiceComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
+  stringToDate(dateParam: string) {
+    let partesData: String[] = dateParam.split("/");
+    let newDate: Date = new Date(Number(partesData[2]), Number(partesData[1]) - 1, Number(partesData[0]));
+    console.log(newDate);
+    return newDate;
+  }
 
   private loadPurchase() {
     this.customerService.getPurchases(this.customer?.LOJA, this.customer?.CODIGO)
