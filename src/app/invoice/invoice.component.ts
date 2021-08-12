@@ -71,6 +71,8 @@ export class InvoiceComponent implements OnInit {
   private loadBonds() {
     let venctoBond: string;
     let dateConvert: Date;
+    let timeDiff: number;
+    let diffDays: number;    
     this.customerService.getBonds(this.customer?.LOJA, this.customer?.CODIGO)
       .subscribe(bonds => {
         console.log(bonds,'bond');
@@ -87,8 +89,27 @@ export class InvoiceComponent implements OnInit {
 
             dateConvert = this.stringToDate(venctoBond);
             bonds.Vencimento = venctoBond;
+            timeDiff = Math.abs(dateConvert.getTime() - new Date(Date.now()).getTime());
+            diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
             bonds.status = (dateConvert > new Date(Date.now()) ? "A Vencer" : "Atrasado");
-            bonds.poColor = (dateConvert > new Date(Date.now()) ? "color-08" : "color-07");
+
+            if (dateConvert >= new Date(Date.now())) 
+            {
+              switch(true) { 
+                case diffDays <= 30: { 
+                  bonds.poColor = "color-08";
+                  break; 
+                } 
+                default: { 
+                  bonds.poColor = "color-03";
+                  break; 
+                } 
+              } 
+            } 
+            else
+            {
+              bonds.poColor = "color-07";
+            }
           })
         this.disableAction = false;
       });
@@ -107,8 +128,7 @@ export class InvoiceComponent implements OnInit {
 
   stringToDate(dateParam: string) {
     let partesData: String[] = dateParam.split("/");
-    let newDate: Date = new Date(Number(partesData[2]), Number(partesData[1]) - 1, Number(partesData[0]));
-    console.log(newDate);
+    let newDate: Date = new Date(Number(partesData[2]), Number(partesData[1]) - 1, Number(partesData[0]));  
     return newDate;
   }
 

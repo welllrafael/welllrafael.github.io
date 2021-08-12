@@ -2,23 +2,5 @@ html {
   background-color: rgb(255, 204, 0);
   width: 100%;
   height: 100%;
-}
-
-.thf-margin {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 480px) {
-  #div {
-      top: 50%; /* IMPORTANT */
-      left: 50%; /* IMPORTANT */
-      display: block;
-      position: absolute;
-      width: 750px;
-      height: 417px;
-
-      margin-top: -208.5px; /* HALF OF THE HEIGHT */
-      margin-left: -375px; /* HALF OF THE WIDTH */
-  }
+  overflow-y: scroll;
 }
