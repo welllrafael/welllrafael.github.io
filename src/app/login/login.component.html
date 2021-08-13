@@ -1,11 +1,11 @@
 <html>
 <div class="po-row">
   <po-widget
-    class="po-lg-5 po-mt-3"
+    class="po-lg-5 po-mt-1"
     [p-height]="height"
     p-background="../../../assets/images/381_SELO.png"
     [p-primary]="primary"
-    [p-no-shadow]=true
+    [p-no-shadow]=false
     >
   </po-widget>
   <div class="po-row">
@@ -48,6 +48,22 @@
     </div>    
     <div class="po-row">
       <po-button p-icon="po-icon-user" class="po-md-10" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
+    </div>
+    <div class="po-row">
+      <po-widget
+        class="po-m-3 po-lg-3"
+        [p-height]=45
+        p-background="../../../assets/images/facebook.png"
+      >
+      </po-widget>  
+      <po-widget    
+        class="po-m-3 po-lg-3 po-ml-0"
+        [p-height]=45
+        p-background="../../../assets/images/instagram.png"
+        [p-primary]="primary"
+        [p-no-shadow]=false
+      >
+      </po-widget>      
     </div>
   </form>
 </div>
