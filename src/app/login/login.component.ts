@@ -17,8 +17,10 @@ export class LoginComponent implements OnInit {
 
   reactiveForm!: FormGroup;
   link: string = 'https://www.google.com.br/search?q=megamodas+mega+modas';
+  facebookLink: string = 'https://www.facebook.com/lojasmegamodas';
+  instagramLink: string = 'https://www.instagram.com/lojasmegamodas';
   primary: boolean = true;
-  height: number = 210;
+  height: number = 190;
   login: string = "";
   birthday!: Date;
 
@@ -67,6 +69,14 @@ export class LoginComponent implements OnInit {
 
   redirectTo() {
     window.open(this.link, '_blank');
+  }
+
+  sendToFacebook(){
+    window.open(this.facebookLink, '_blank');
+  }
+
+  sendToInstagram(){
+    window.open(this.instagramLink, '_blank');
   }
 
 }

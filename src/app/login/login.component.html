@@ -1,7 +1,7 @@
 <html>
 <div class="po-row">
   <po-widget
-    class="po-lg-5 po-mt-1"
+    class="po-lg-5"
     [p-height]="height"
     p-background="../../../assets/images/381_SELO.png"
     [p-primary]="primary"
@@ -9,35 +9,35 @@
     >
   </po-widget>
   <div class="po-row">
-    <div class="po-mt-2 po-md-14">
-      <label style="font-weight: bold;">FAÇA SEU LOGIN AQUI E CONFIRA OS SERVIÇOS DISPONÍVEIS PARA VOCÊ:</label> 
-      <br> 
-      <br> 
-      <span class="material-icons">
-        verified
-        </span>
-      <label>CONSULTA DE LIMITES DO SEU CADASTRO</label> 
-      <br> 
-      <span class="material-icons">
+    <div class="po-md-14">            
+      <po-info p-value="FAÇA SEU LOGIN AQUI E CONFIRA OS SERVIÇOS DISPONÍVEIS PARA VOCÊ:"></po-info>      
+      <div class="po-row">
         <span class="material-icons">
-          date_range
+          verified          
+        </span>      
+        <po-info p-value="CONSULTA DE LIMITES DO SEU CADASTRO."></po-info>      
+      </div>      
+      <div class="po-row">
+        <span class="material-icons">
+          date_range          
+        </span>      
+        <po-info p-value="CONSULTA DAS SUAS PARCELAS A PAGAR."></po-info>      
+      </div>      
+      <div class="po-row">
+        <span class="material-icons">
+          smartphone
           </span>
-        </span>
-      <label>CONSULTA DAS SUAS PARCELAS A PAGAR</label>
-      <br> 
-      <span class="material-icons">
-        smartphone
-        </span>
-      <label>SOLICITAÇÃO DE PAGAMENTO ATRAVÉS DO WHATSAPP</label> 
-      <br> 
-      <span class="material-icons">
-        description
-        </span>
-      <label>RENEGOCIAÇÃO DE DÍVIDAS ANTIGAS</label>      
+        <po-info p-value="SOLICITAÇÃO DE PAGAMENTO ATRAVÉS DO WHATSAPP."></po-info>      
+      </div>      
+      <div class="po-row">
+        <span class="material-icons">
+          description
+          </span>
+        <po-info p-value="RENEGOCIAÇÃO DE DÍVIDAS."></po-info>      
+      </div>
     </div>      
   </div>  
 </div>
-<br>
 <div class="po-row">
   <form [formGroup]="reactiveForm">
     <div class="po-row">
@@ -54,6 +54,7 @@
         class="po-m-3 po-lg-3"
         [p-height]=45
         p-background="../../../assets/images/facebook.png"
+        (p-click)="sendToFacebook()"
       >
       </po-widget>  
       <po-widget    
@@ -62,6 +63,7 @@
         p-background="../../../assets/images/instagram.png"
         [p-primary]="primary"
         [p-no-shadow]=false
+        (p-click)="sendToInstagram()"
       >
       </po-widget>      
     </div>
