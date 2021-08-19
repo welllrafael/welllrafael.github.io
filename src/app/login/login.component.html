@@ -1,39 +1,57 @@
 <html>
 <div class="po-row">
-  <po-widget
+  <div>
+    <img class="logoMega" src="../../../assets/images/logo_megamodas.png" />
+  </div>
+<!--   <div class="po-row">
+    <po-widget
+    class="po-md-3"
+    [p-height]=40
+    p-background="../../../assets/images/logo_megamodas.png"
+    [p-primary]="primary"
+    [p-no-shadow]=true
+    >
+  </po-widget>
+  </div> -->
+  <div>
+    <img class="imgPortalFat" src="../../../assets/images/381_SELO.png" />
+  </div>
+<!--   <div class="po-row">
+    <po-widget
     class="po-md-3"
     [p-height]=130
     p-background="../../../assets/images/381_SELO.png"
     [p-primary]="primary"
-    [p-no-shadow]=false
+    [p-no-shadow]=true
     >
   </po-widget>
+  </div> -->
   <div class="po-row">
     <div class="po-md-14">            
-      <po-info p-value="FAÇA SEU LOGIN AQUI E CONFIRA OS SERVIÇOS DISPONÍVEIS PARA VOCÊ:"></po-info>      
+      <b><po-info p-value="FAÇA SEU LOGIN AQUI E CONFIRA OS SERVIÇOS DISPONÍVEIS PARA VOCÊ:"></po-info></b>
       <div class="po-row">
         <span class="material-icons">
           verified          
-        </span>      
-        <po-info p-value="CONSULTA DE LIMITES DO SEU CADASTRO."></po-info>      
+        </span> 
+        <font class="po-font-text-small">CONSULTA DE LIMITES DO SEU CADASTRO</font>     
       </div>      
       <div class="po-row">
         <span class="material-icons">
           date_range          
         </span>      
-        <po-info p-value="CONSULTA DAS SUAS PARCELAS A PAGAR."></po-info>      
+        <font class="po-font-text-small">CONSULTA DAS SUAS PARCELAS A PAGAR</font>     
       </div>      
       <div class="po-row">
         <span class="material-icons">
           smartphone
           </span>
-        <po-info p-value="SOLICITAÇÃO DE PAGAMENTO ATRAVÉS DO WHATSAPP."></po-info>      
+          <font class="po-font-text-small">SOLICITAÇÃO DE PAGAMENTO ATRAVÉS DO WHATSAPP</font>      
       </div>      
       <div class="po-row">
         <span class="material-icons">
           description
           </span>
-        <po-info p-value="RENEGOCIAÇÃO DE DÍVIDAS."></po-info>      
+          <font class="po-font-text-small">RENEGOCIAÇÃO DE DÍVIDAS</font>      
       </div>
     </div>      
   </div>  
@@ -47,9 +65,9 @@
       <po-datepicker class="po-md-10" [(ngModel)]="birthday" formControlName="birthday" p-placeholder="Data de Nascimento" > </po-datepicker>
     </div>    
     <div class="po-row">
-      <po-button p-icon="po-icon-user" class="po-md-10" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
+      <po-button p-icon="po-icon-user" p-type="default" class="po-md-10" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
     </div>
-    <div class="po-row">
+<!--     <div class="po-row">
       <po-widget
         class="po-m-3 po-sm-3"
         [p-height]=45
@@ -66,7 +84,7 @@
         (p-click)="sendToInstagram()"
       >
       </po-widget>      
-    </div>
+    </div> -->
   </form>
 </div>
 </html>

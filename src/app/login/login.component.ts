@@ -71,12 +71,4 @@ export class LoginComponent implements OnInit {
     window.open(this.link, '_blank');
   }
 
-  sendToFacebook(){
-    window.open(this.facebookLink, '_blank');
-  }
-
-  sendToInstagram(){
-    window.open(this.instagramLink, '_blank');
-  }
-
 }
