@@ -4,3 +4,13 @@ html {
   height: 100%;
   overflow-y: scroll;
 }
+
+.logoMega {  
+  max-width: 1080px;   /* Máximo da largura da imagem */
+  width: 50%;
+  max-height: 500px;  /* Máximo da altura da imagem */
+  min-height: auto;      /* Mínimo da altura, por padrão “auto” */
+  background-size:100%;
+  background-repeat: no-repeat;
+  padding-left: 2%;
+}

@@ -1,12 +1,15 @@
 <html>
 <div>
   <div>
-    <div>MegaModas</div>
-    <div>
-      <po-button
+    <div style="text-align: center;">
+      <img class="logoMega" src="../../../assets/images/logo_megamodas.png" />
+    </div>
+    <div style="text-align: right;">
+      <po-button       
        p-icon="po-icon po-icon-exit"
        p-label="Sair"
        (p-click)="exit()"
+       p-type="primary"
      ></po-button>
    </div>
     <div>
@@ -20,12 +23,13 @@
       </div>
     </div>
     <div style="margin-top: 1%;">
-      <div>
+      <div style="text-align: center;">
         <po-button
           p-icon="po-icon po-icon-notification"
-          p-label="Vencimento"
+          p-label="Títulos a Pagar"
           (p-click)="getBonds()"
           [p-disabled]="disableAction"
+          p-type="primary"
         ></po-button>
         <div *ngIf="customerAlign">
           <po-button
