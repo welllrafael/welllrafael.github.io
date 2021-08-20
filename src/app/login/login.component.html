@@ -1,6 +1,6 @@
 <html>
 <div class="po-row">
-  <div>
+  <div >
     <img class="logoMega" src="../../../assets/images/logo_megamodas.png" />
   </div>
 <!--   <div class="po-row">
@@ -13,7 +13,7 @@
     >
   </po-widget>
   </div> -->
-  <div>
+  <div class="po-row">
     <img class="imgPortalFat" src="../../../assets/images/381_SELO.png" />
   </div>
 <!--   <div class="po-row">
@@ -27,34 +27,34 @@
   </po-widget>
   </div> -->
   <div class="po-row">
-    <div class="po-md-14">            
+    <div class="po-md-14">
       <b><po-info p-value="FAÇA SEU LOGIN AQUI E CONFIRA OS SERVIÇOS DISPONÍVEIS PARA VOCÊ:"></po-info></b>
       <div class="po-row">
         <span class="material-icons">
-          verified          
-        </span> 
-        <font class="po-font-text-small">CONSULTA DE LIMITES DO SEU CADASTRO</font>     
-      </div>      
+          verified
+        </span>
+        <font class="po-font-text-small">CONSULTA DE LIMITES DO SEU CADASTRO</font>
+      </div>
       <div class="po-row">
         <span class="material-icons">
-          date_range          
-        </span>      
-        <font class="po-font-text-small">CONSULTA DAS SUAS PARCELAS A PAGAR</font>     
-      </div>      
+          date_range
+        </span>
+        <font class="po-font-text-small">CONSULTA DAS SUAS PARCELAS A PAGAR</font>
+      </div>
       <div class="po-row">
         <span class="material-icons">
           smartphone
           </span>
-          <font class="po-font-text-small">SOLICITAÇÃO DE PAGAMENTO ATRAVÉS DO WHATSAPP</font>      
-      </div>      
+          <font class="po-font-text-small">SOLICITAÇÃO DE PAGAMENTO ATRAVÉS DO WHATSAPP</font>
+      </div>
       <div class="po-row">
         <span class="material-icons">
           description
           </span>
-          <font class="po-font-text-small">RENEGOCIAÇÃO DE DÍVIDAS</font>      
+          <font class="po-font-text-small">RENEGOCIAÇÃO DE DÍVIDAS</font>
       </div>
-    </div>      
-  </div>  
+    </div>
+  </div>
 </div>
 <div class="po-row">
   <form [formGroup]="reactiveForm">
@@ -63,7 +63,7 @@
     </div>
     <div class="po-row">
       <po-datepicker class="po-md-10" [(ngModel)]="birthday" formControlName="birthday" p-placeholder="Data de Nascimento" > </po-datepicker>
-    </div>    
+    </div>
     <div class="po-row">
       <po-button p-icon="po-icon-user" p-type="default" class="po-md-10" p-label="Login" (p-click)="loginCustomer()" [p-disabled]="!reactiveForm.valid"> </po-button>
     </div>
@@ -74,8 +74,8 @@
         p-background="../../../assets/images/facebook.png"
         (p-click)="sendToFacebook()"
       >
-      </po-widget>  
-      <po-widget    
+      </po-widget>
+      <po-widget
         class="po-m-3 po-sm-3 po-ml-0"
         [p-height]=45
         p-background="../../../assets/images/instagram.png"
@@ -83,7 +83,7 @@
         [p-no-shadow]=false
         (p-click)="sendToInstagram()"
       >
-      </po-widget>      
+      </po-widget>
     </div> -->
   </form>
 </div>

@@ -5,7 +5,7 @@ html {
   overflow-y: scroll;
 }
 
-.logoMega {  
+.logoMega {
   max-width: 1080px;   /* Máximo da largura da imagem */
   width: 50%;
   max-height: 500px;  /* Máximo da altura da imagem */
@@ -13,4 +13,8 @@ html {
   background-size:100%;
   background-repeat: no-repeat;
   padding-left: 2%;
+}
+
+.alignRigth{
+  text-align: right;
 }
