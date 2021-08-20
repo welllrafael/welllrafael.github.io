@@ -1,0 +1,8 @@
+po-button {
+    --color-button-color: white;
+    --color-button-background-color: #2f55a4;
+    --color-button-border: white;
+  
+    --color-button-background-color-disabled: grey;
+    --color-button-color-disabled: white;
+  }

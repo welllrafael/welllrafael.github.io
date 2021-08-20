@@ -34,7 +34,7 @@ export class BondsComponent implements OnInit {
       label: 'WhatsApp',
       action: this.sendToWhatsApp.bind(this),
       disabled: false,
-      type: 'danger',
+      type: 'default',
       icon: 'po-icon po-icon-plus-circle'
     }
   ];

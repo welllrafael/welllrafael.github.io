@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+po-button {
+    --color-button-color: white;
+    --color-button-background-color: rgb(37, 211, 102);
+    --color-button-border: white;
+  
+    --color-button-background-color-disabled: rgb(198, 255, 185);
+    --color-button-color-disabled: white;
+  }
