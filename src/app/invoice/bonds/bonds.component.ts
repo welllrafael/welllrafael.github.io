@@ -24,12 +24,12 @@ export class BondsComponent implements OnInit {
   @Input() customer: Customer | undefined;
 
   readonly actions: Array<PoListViewAction> = [
-    {
+    /* {
       label: 'Pix',
       action: this.paymentByPix.bind(this),
       disabled: true,
       icon: 'po-icon po-icon-pix-logo'
-    },
+    }, */
     {
       label: 'WhatsApp',
       action: this.sendToWhatsApp.bind(this),
@@ -52,7 +52,7 @@ export class BondsComponent implements OnInit {
   }
 
   formatTitle(item: any) {
-    return `Titulo - ${item.Numero}`;
+    return `Título - ${item.Numero}`;
   }
 
   showDetail(item: any) {
@@ -69,7 +69,7 @@ export class BondsComponent implements OnInit {
 
     cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
 
-    window.open(`http://api.whatsapp.com/send?1=pt_BR&phone=5565992575958&text=Gostaria%20de%20falar%20sobre%20o%20CPF:%20${cpf}%20título:%20${pItem.Numero}`,'_blank');
+    window.open(`http://api.whatsapp.com/send?1=pt_BR&phone=556536216182&text=Gostaria%20de%20falar%20sobre%20o%20CPF:%20${cpf}%20título:%20${pItem.Numero}%20valor: R$${pItem.Valor}`,'_blank');
   }
 
 }
