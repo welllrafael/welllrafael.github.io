@@ -15,8 +15,8 @@ po-button {
 }
 
 .logoMega {
-  max-width: 1080px;   /* Máximo da largura da imagem */
-  width: 50%;
+  max-width: 90%;   /* Máximo da largura da imagem */
+  width: 60%;
   max-height: 500px;  /* Máximo da altura da imagem */
   min-height: auto;      /* Mínimo da altura, por padrão “auto” */
   background-size:100%;
@@ -25,8 +25,8 @@ po-button {
 }
 
 .imgPortalFat {
-  max-width: 1080px;   /* Máximo da largura da imagem */
-  width: 30%;
+  max-width: 25%;   /* Máximo da largura da imagem */
+  width: 20%;
   max-height: 500px;  /* Máximo da altura da imagem */
   min-height: auto;      /* Mínimo da altura, por padrão “auto” */
   background-size:100%;

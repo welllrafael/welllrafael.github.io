@@ -1,17 +1,17 @@
 <html>
 <div>
   <div>
-    <div style="text-align: center;">
+    <div style="text-align: center;margin-top: 2%;">
       <img class="logoMega" src="../../../assets/images/logo_megamodas.png" />
+      <div style="text-align: right;">
+        <po-button
+         p-icon="po-icon po-icon-exit"
+         p-label="Sair"
+         (p-click)="exit()"
+         p-type="primary"
+       ></po-button>
+      </div>
     </div>
-    <div style="text-align: right;">
-      <po-button       
-       p-icon="po-icon po-icon-exit"
-       p-label="Sair"
-       (p-click)="exit()"
-       p-type="primary"
-     ></po-button>
-   </div>
     <div>
       <div>
         <po-gauge
