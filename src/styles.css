@@ -7,3 +7,12 @@ po-button {
     --color-button-background-color-disabled: rgb(212, 218, 219);
     --color-button-color-disabled: white;
   }
+
+  .po-gauge-legend-text{
+    font-size: 20px;
+  }
+
+
+  .po-gauge-description-upper-text{
+    font-size: 20px;
+  }

@@ -31,7 +31,7 @@ export class BondsComponent implements OnInit {
       icon: 'po-icon po-icon-pix-logo'
     }, */
     {
-      label: 'WhatsApp',
+      label: 'Solicitar Pagamento via WhatsApp',
       action: this.sendToWhatsApp.bind(this),
       disabled: false,
       type: 'default',

@@ -22,15 +22,11 @@
         ></po-gauge>
       </div>
     </div>
-    <div style="margin-top: 1%;">
+    <div style="text-align: center;margin-top: 1%;">
+      <label style="font-weight: bold;">Títulos a Pagar</label>
+    </div>
+    <div style="margin-top: 1%;">      
       <div style="text-align: center;">
-        <po-button
-          p-icon="po-icon po-icon-notification"
-          p-label="Títulos a Pagar"
-          (p-click)="getBonds()"
-          [p-disabled]="disableAction"
-          p-type="primary"
-        ></po-button>
         <div *ngIf="customerAlign">
           <po-button
           p-icon="po-icon po-icon-credit-payment"
