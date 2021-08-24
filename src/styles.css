@@ -8,11 +8,18 @@ po-button {
     --color-button-color-disabled: white;
   }
 
-  .po-gauge-legend-text{
-    font-size: 20px;
+po-gauge {
+  --color-gauge-legend-scrollbar: white;
+}
+
+po-page-content {
+  --color-page-content-background-color-scrollbar: black;
   }
 
+.po-gauge-legend-text {
+  font-size: 18px;
+}
 
-  .po-gauge-description-upper-text{
-    font-size: 20px;
-  }
+.po-gauge-description-upper-text {
+  font-size: 18px;
+}
